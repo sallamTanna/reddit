@@ -1,0 +1,21 @@
+
+<link rel="stylesheet" href="./csss/style.css">
+
+
+<form  action="/sendPost" method="post">
+
+  <textarea name="post" rows="8" cols="80"></textarea>
+  <input type="submit" name="submit" id="addPost" value="Add Post" style="width:500px; height:50px">
+</form>
+
+
+
+{{#each posts}}
+<ul class="post"><a href="/{{this.u_id}}/{{this.p_id}}"/>{{this.body}}</a></br>
+  By:<a href="/{{this.u_id}}">{{this.name}}</a>
+
+</ul>
+
+
+
+{{/each}}

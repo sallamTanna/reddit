@@ -1,0 +1,20 @@
+
+
+
+
+
+
+<h1>{{title}}</h1>
+{{#each result}}
+
+<li>{{this.cbody}}</li>
+
+{{/each}}
+
+</br></br>
+
+<!-- <form class="" action="/sendComment" method="post"> -->
+<form class="" action="/{{userId}}/{{postId}}" method="post">
+  <textarea name="comment" rows="8" cols="50" name="addComment" placeholder="Add comment..."></textarea>
+  <input type="submit" name="sendComment" value="sendComment">
+</form>
