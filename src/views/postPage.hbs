@@ -1,20 +1,24 @@
+<h1 class="Welcome">{{title}}</h1>
 
 
 
 
 
 
-<h1>{{title}}</h1>
+
 {{#each result}}
-
-<li>{{this.cbody}}</li>
-
+  <ul class="post">{{this.cbody}}</br>
+    By:<a href="/{{this.user_id}}">{{this.uname}}</a>
+  </ul>
 {{/each}}
 
-</br></br>
 
-<!-- <form class="" action="/sendComment" method="post"> -->
+
+
+</br>
+</br>
+
 <form class="" action="/{{userId}}/{{postId}}" method="post">
-  <textarea name="comment" rows="8" cols="50" name="addComment" placeholder="Add comment..."></textarea>
-  <input type="submit" name="sendComment" value="sendComment">
+  <textarea class="textarea" name="comment" rows="8" cols="50" name="addComment" placeholder="Add comment..."></textarea></br>
+  <input class="sendComment" type="submit" name="sendComment" value="Send">
 </form>

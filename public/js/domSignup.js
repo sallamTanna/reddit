@@ -65,7 +65,3 @@ createErrorEventListener(password, passwordValidation, passwordIcon, 'Password s
 createErrorEventListener(email, emailValidation, emailIcon, 'Invalid email');
 //phone test
 createErrorEventListener(phone, phoneValidation, phoneIcon, 'Phone number should be 10 digits');
-
-
-
- 

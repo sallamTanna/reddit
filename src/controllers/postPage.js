@@ -8,10 +8,16 @@ const postPage= (req,res)=>{
 const postId = req.params.postId;
 const userId = req.params.userId;
 
-select.selecComments(postId,result=>{
-  const title = result[0].pbody;
-    res.render('postPage' , {result,title,postId,userId})
 
+
+select.selecComments(postId,result=>{
+
+  if(result ==''){  res.render('postPage', {postId,userId}) }
+   else {
+
+     const title = result[0].post_body;
+    res.render('postPage' , {result,title,postId,userId})
+  }
 })
 
 }
