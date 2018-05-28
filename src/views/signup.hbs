@@ -1,15 +1,10 @@
 <link rel="stylesheet" href="csss/style.css">
-<link rel="stylesheet" href="csss/signupStyle.css">
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-{{>header}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 <div class="form">
 
-  <ul class="tab-group">
-    <li class="tab active"><a href="/signup">Sign Up</a></li>
-    <li class="tab"><a href="/login">Log In</a></li>
-  </ul>
+
 
   <div class="tab-content">
 
@@ -19,8 +14,7 @@
 
 
 
-    <!-- signuppppppppppppppppppppppppppppppppppppppppppppppppppp -->
-    <h1>Sign Up for Free</h1>
+     <h1 class="Welcome">Sign Up for Free</h1>
 
 
     <form action="/signup" method="post">
@@ -32,7 +26,7 @@
 
       <div class="field-wrap">
         <div class="field-wrap">
-          <input type="text" name="name" id="userName" required placeholder="Username..." />
+          <input class="loginInput" type="text" name="name" id="userName" required placeholder="Username..." />
           <i class="fa fa-exclamation-circle" id="UsernameIcon"></i>
         </div>
       </div>
@@ -40,31 +34,32 @@
 
 
       <div class="field-wrap">
-        <input name="email" id="email"  type="email" required placeholder="Email" />
+        <input class="loginInput" name="email" id="email"  type="email" required placeholder="Email" />
         <i class="fa fa-exclamation-circle" id="emailIcon"></i>
       </div>
 
 
       <div class="field-wrap">
-        <input id="phone" name="phone" type="text" required placeholder="Phone" />
+        <input class="loginInput" id="phone" name="phone" type="text" required placeholder="Phone" />
         <i class="fa fa-exclamation-circle" id="phoneIcon"></i>
       </div>
 
 
 
       <div class="field-wrap">
-        <input name="password" id="password" type="password" required placeholder="Password" />
+        <input class="loginInput" name="password" id="password" type="password" required placeholder="Password" />
         <i class="fa fa-exclamation-circle" id="passwordIcon"></i>
       </div>
 
 
 
-      <button type="submit" id="formSubmit" class="button button-block" />Get Started</button>
+      <button class="loginButton" type="submit" id="formSubmit" class="button button-block" />Get Started</button>
 
     </form>
+    <p class="forget">Aready have an account?<a href="login"> Login now!</a></p>
 
 
 
   </div>
 </div>
-<script src="./js/dom.js"></script>
+<script src="./js/domSignup.js"></script>

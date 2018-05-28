@@ -1,6 +1,17 @@
 BEGIN;
 DROP TABLE IF EXISTS users, posts, comments, votes CASCADE;
 
+
+
+
+
+
+
+
+
+
+
+
 CREATE TABLE users(
   id SERIAL PRIMARY KEY,
   name VARCHAR(30) NOT NULL,
@@ -20,16 +31,16 @@ CREATE TABLE comments(
   id SERIAL PRIMARY KEY,
   body TEXT NOT NULL,
   post_id INTEGER REFERENCES posts(id),
-  user_id INTEGER REFERENCES users(id),
-  parent_id INTEGER REFERENCES comments(id)
+  user_id INTEGER REFERENCES users(id)
+  -- parent_id INTEGER REFERENCES comments(id)
 );
 
-CREATE TABLE votes(
-  id SERIAL PRIMARY KEY,
-  user_id INTEGER REFERENCES users(id),
-  post_id INTEGER REFERENCES posts(id)
-
-);
+-- CREATE TABLE votes(
+--   id SERIAL PRIMARY KEY,
+--   user_id INTEGER REFERENCES users(id),
+--   post_id INTEGER REFERENCES posts(id)
+--
+-- );
 
 INSERT INTO users (name, password, phone, email) VALUES
 ('sallam','123', '0598985166','sallamtanna2015@hotmail.com'),
@@ -44,15 +55,33 @@ INSERT INTO posts (body, user_id) VALUES
 ('The fourth post',4);
 
 
-INSERT INTO comments (body, post_id, user_id, parent_id) VALUES
-(' comment1 ',1,1,1),
-(' comment2 ',1,1,1),
-('comment 1',2,2,1),
-('comment 1',3,2,1),
-('comment 1',4,2,1);
+INSERT INTO comments (body, post_id, user_id) VALUES
+(' comment1 ',1,1),
+(' comment2 ',1,1),
+('comment 1',2,2),
+('comment 1',3,2),
+('comment 1',4,2);
 
-INSERT INTO votes(user_id, post_id) VALUES
-(1,1),
-(2,2);
+-- INSERT INTO votes(user_id, post_id) VALUES
+-- (1,1),
+-- (2,2);
 
 COMMIT;
+
+
+
+begin;
+DROP TABLE if EXISTS userr,orders CASCADE;
+CREATE TABLE userr(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(30) UNIQUE
+);
+CREATE TABLE orders(
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES userr(id)
+ );
+
+insert into userr(name)values('dana'),('lana'),('sallam');
+
+insert into orders(user_id) values(1),(2);
+  COMMIT;

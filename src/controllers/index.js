@@ -8,6 +8,7 @@ const userPage = require('./userPage')
 const postPage = require('./postPage')
 const loggedHome = require('./loggedHome')
 const sendComment = require('./sendComment')
+const logout = require('./logout')
 
 
 router.get('/' , home.get);
@@ -19,17 +20,16 @@ router.get('/signup',signup.get);
 router.post('/signup',signup.post);
 
 router.get('/login',login.get);
-router.post('/login',login.check); // to check if the user has account
+router.post('/login',login.check);
 
 
-router.get('/:id' , userPage) // to display user page
-router.get('/:userId/:postId' , postPage.postPage)// to display post page
+router.get('/:id' , userPage)
+router.get('/:userId/:postId' , postPage.postPage)
 router.post('/:userId/:postId' , sendComment.sendComment)
 
 
-router.get('/loggedHome' , loggedHome.get) // to display user page
-
-// router.post('/sendComment' , sendComment.sendComment)
+router.get('/loggedHome' , loggedHome.get)
+router.post('/logout' , logout.logout)
 
 
 module.exports = router;

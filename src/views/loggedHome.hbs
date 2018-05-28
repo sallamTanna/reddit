@@ -1,21 +1,24 @@
 
 <link rel="stylesheet" href="./csss/style.css">
 
+ <form class="" action="/logout" method="post">
+
+<input type="submit" name="Logout" value="Logout">
+  </form>
+
+
 
 <form  action="/sendPost" method="post">
-
-  <textarea name="post" rows="8" cols="80"></textarea>
-  <input type="submit" name="submit" id="addPost" value="Add Post" style="width:500px; height:50px">
+<div class="center">
+  <textarea class="textarea"name="post" rows="8" cols="58" placeholder="Write your post..."></textarea><br>
+  <input type="submit" class="loginButton" name="submit" id="addPost" value="Add" style="width:500px; height:50px">
+</div>
 </form>
 
 
 
 {{#each posts}}
-<ul class="post"><a href="/{{this.u_id}}/{{this.p_id}}"/>{{this.body}}</a></br>
-  By:<a href="/{{this.u_id}}">{{this.name}}</a>
-
+<ul class="post"><a class="hrefPostName" href="/{{this.u_id}}/{{this.p_id}}"/>{{this.body}}</a></br>
+  By:<a class="hrefName" href="/{{this.u_id}}">{{this.name}}</a>
 </ul>
-
-
-
 {{/each}}

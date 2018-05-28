@@ -16,6 +16,9 @@ const get = (req, res) => {
 
 
 const insertPost = (req, res) => {
+        var post = req.body.post;
+if(post ==''){res.status(400).send('Insert something before submetting!')}
+else {
 
   if (!req.headers.cookie || !req.headers.cookie.includes('token')) {
     res.render('login')
@@ -26,7 +29,6 @@ const insertPost = (req, res) => {
         res.render('login')
       } else
       {
-        var post = req.body.post;
         const newId = result.id;
 
         insert.insertPost(post, newId, (error, result) => {
@@ -38,6 +40,8 @@ const insertPost = (req, res) => {
 
     })
   }
+}
+
 }
 
 module.exports = {

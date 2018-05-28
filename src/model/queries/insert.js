@@ -32,10 +32,10 @@ exports.insertUser=(name,password,phone,email,cb)=>{
 
 
 
-exports.insertComment=(commentBody,post_id,user_id,parent_id,cb)=>{
+exports.insertComment=(commentBody,post_id,user_id,cb)=>{
  const sql = {
-    text: `INSERT INTO comments(body,post_id,user_id,parent_id) VALUES ($1 , $2 ,$3, $4 ) returning user_id`,
-    values: [ commentBody,post_id,user_id,parent_id]
+    text: `INSERT INTO comments(body,post_id,user_id) VALUES ($1 , $2 ,$3 ) returning user_id`,
+    values: [ commentBody,post_id,user_id]
   }
   connection.query(sql, (error, res) => {
     if (error) return cb(error);

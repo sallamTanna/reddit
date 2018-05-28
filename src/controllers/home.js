@@ -23,10 +23,7 @@ jwt.verify(cookie.parse(req.headers.cookie).token , process.env.SECRET, (error,r
   if(error){res.render('login')}
   else {
     res.redirect('/loggedHome')
-    // var {body} = req.body;
-    // insert.insertPost(body,1,1,(error,result)=>{
-    //   if(error)console.log(error);
-    //   res.redirect('/');
+   
 }
     })
   }
